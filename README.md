@@ -2,9 +2,9 @@
 
     This server is simple example shows how to transfer Java objects between client-server application in netty
 
-##Client on JavaFx example. 
+## Client on JavaFx example. 
 
-###Connection
+### Connection
 ```java
        //Connect 
        private Channel Connect(String host , int port) throws InterruptedException {
@@ -34,7 +34,7 @@
                return null;
            }
 ```
-###Client handler
+### Client handler
 ```java           
            public class ClientHandler extends ChannelInboundHandlerAdapter {
            
@@ -83,7 +83,7 @@
            }
            new Thread(task).start();
 ```
-###Send object method 
+### Send object method 
 ```java
            public <T extends Packet> void sendPacket(T packet){
                    if(!connected.get()){
@@ -109,7 +109,7 @@
 ## !!! PACKAGE NAME IN CLIENT AND SERVER MUST BE THE SAME. In other case we have `ClassNotFoundException`!!!
 #### in this example we have package "exampleServer" and "packetHandlers" in sources path. packetHandlers is the Packet's packege in both (client & server) applications
 
-###Packet example
+### Packet example
 ```java
             package packetHandlers;
             import java.io.Serializable;
@@ -127,7 +127,7 @@
                 }
             }
 ```
-###Pacet data handler class
+### Pacet data handler class
 ```java
             package packetHandlers;
             import java.io.Serializable;
